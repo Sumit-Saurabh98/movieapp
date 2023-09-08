@@ -9,14 +9,16 @@ function Navbar(props) {
     const [userId, setUserId] = useState(localStorage.getItem('userId') || null);
     const [userDisplayName, setUserDisplayName] = useState(localStorage.getItem('userDisplayName') || null);
 
+    const storedUserId = localStorage.getItem('userId');
+
     useEffect(() => {
-        const storedUserId = localStorage.getItem('userId');
+        
         const storedUserDisplayName = localStorage.getItem('userDisplayName');
         if (storedUserId && storedUserDisplayName) {
             setUserId(storedUserId);
             setUserDisplayName(storedUserDisplayName);
         }
-    }, []);
+    }, [storedUserId]);
 
     return (
         <div>

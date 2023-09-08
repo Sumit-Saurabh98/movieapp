@@ -31,6 +31,7 @@ function Authentication(props) {
   <Button onClick={()=>{
     localStorage.clear();
     navigate("/");
+    window.location.reload();
   }} leftIcon={<FcGoogle />} colorScheme='gray' variant='solid'>
     Logout
   </Button>
